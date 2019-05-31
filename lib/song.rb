@@ -72,20 +72,40 @@ class Song
 # Build a Class constructor
 # Song.new_from_filename("Taylor Swift - Blank Space.mp3")
 # Return a new Song instance with the song name set, artist_name set, remove mp3
-  def Song.new_from_filename(name)
-    
-    new_name = self.name.split(" - ")
-    artist_name = new_name[0]
-    song_name = new_name[1]
+  def Song.new_from_filename(file_name)
     # binding.pry
+    file = file_name.split(".").first     # declare a new variable, spliting the .mp3 from the string, .first to call the title
+    artist = file.split(" - ").first      # to have it as a value for the return 
+    song_name = file.split(" - ").last    # to have it as a value for the return
     
+    # Parse the filename, separate the artist name
+    song_title = self.new_by_name(song_name)  # #<Song:0x0000000002c626e8 @artist_name=nil, @name="For Love I Come">
+    song_title.name = song_name               # calling upon song_title and .name => "For Love I Come"
+    song_title.artist_name = artist           # Using the .artist_name method => artist from above "Thundercat"
+    song_title                                # Return the value after manipulation through lines 84-86
+  end
+  
+# Build a class constructor
+# Accepts filename in the format "Thundercat - For Love I Come.mp3"
+# Class method should NOT only parse the filename correctly but should also save the Song instance 
+  def Song.create_from_filename(file_name)  
+    file = file_name.split(".").first     # Have this method work for the construct below
+    artist = file.split(" - ").first      #  "Thundercat"
+    song_name = file.split(" - ").last    #  "For Love I Come"
     
+    # Parse the filename
+    file_title = self.new(song_name, artist)
+    # binding.pry   
+    file_title.name = song_name
+    file_title.artist_name = artist
+    file_title.save
+    file_title
   end
   
   
 # Reset the state of the @@all class variable
   def Song.destroy_all
-    self.all.clear
+    self.all.clear        # collect all and clear the information
   end
   
   
