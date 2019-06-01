@@ -38,7 +38,7 @@ class Song
 
 # Build a class constructor
 # Takes in a string name of a song ad returns a song instance
-# Song being saved into the @@all class variable 
+# SAVE into the @@all class variable 
  def Song.create_by_name(name) 
     song = self.new(name)     # decalring song as the new song inputted
     song.save                 # saving the song into the @@all class variable
