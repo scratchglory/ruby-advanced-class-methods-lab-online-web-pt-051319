@@ -80,9 +80,9 @@ class Song
     
     # Parse the filename, separate the artist name
     song_title = self.new_by_name(song_name)  # #<Song:0x0000000002c626e8 @artist_name=nil, @name="For Love I Come">
-    song_title.name = song_name               # calling upon song_title and .name => "For Love I Come"
-    song_title.artist_name = artist           # Using the .artist_name method => artist from above "Thundercat"
-    song_title                                # Return the value after manipulation through lines 84-86
+    song_title.name = song_name          # calling upon song_title and .name => "For Love I Come"
+    song_title.artist_name = artist      # Using the .artist_name method => artist from above                                         "Thundercat"
+    song_title                           # Return the value after manipulation through lines 84-86
   end
   
 # Build a class constructor
