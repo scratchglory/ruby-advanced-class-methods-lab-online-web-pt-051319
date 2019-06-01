@@ -38,7 +38,7 @@ class Song
 
 # Build a class constructor
 # Takes in a string name of a song ad returns a song instance
-# Song being saved into the @@all class variable 
+# SAVE into the @@all class variable 
  def Song.create_by_name(name) 
     song = self.new(name)     # decalring song as the new song inputted
     song.save                 # saving the song into the @@all class variable
@@ -80,9 +80,9 @@ class Song
     
     # Parse the filename, separate the artist name
     song_title = self.new_by_name(song_name)  # #<Song:0x0000000002c626e8 @artist_name=nil, @name="For Love I Come">
-    song_title.name = song_name               # calling upon song_title and .name => "For Love I Come"
-    song_title.artist_name = artist           # Using the .artist_name method => artist from above "Thundercat"
-    song_title                                # Return the value after manipulation through lines 84-86
+    song_title.name = song_name          # calling upon song_title and .name => "For Love I Come"
+    song_title.artist_name = artist      # Using the .artist_name method => artist from above                                         "Thundercat"
+    song_title                           # Return the value after manipulation through lines 84-86
   end
   
 # Build a class constructor
